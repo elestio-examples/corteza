@@ -12,3 +12,4 @@ docker-compose up -d;
 echo "Registering..."
 sleep 30s;
 docker-compose exec -T server corteza-server users add ${ADMIN_EMAIL} --password ${ADMIN_PASSWORD}
+docker-compose exec -T server corteza-server roles useradd super-admin ${ADMIN_EMAIL}

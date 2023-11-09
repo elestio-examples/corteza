@@ -13,7 +13,13 @@ Deploy Corteza server with CI/CD on Elestio
 You can open Corteza UI here:
 
     URL: https://[CI_CD_DOMAIN]
-    email: pixelfed
+    email: [ADMIN_EMAIL]
+    password: [ADMIN_PASSWORD]
+
+You can open Corteza Admin UI here:
+
+    URL: https://[CI_CD_DOMAIN]/admin
+    email: [ADMIN_EMAIL]
     password: [ADMIN_PASSWORD]
 
 You can open PgAdmin web UI here:
