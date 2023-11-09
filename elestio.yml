@@ -49,6 +49,8 @@ environments:
     value: "[DOMAIN]@vm.elestio.app"
   - key: "AUTH_BASE_URL"
     value: "'https://[CI_CD_DOMAIN]/auth'"
+  - key: "FEDERATION_ENABLED"
+    value: "true"
 
 config:
   runTime: "dockerCompose"
