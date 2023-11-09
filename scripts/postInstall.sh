@@ -7,7 +7,8 @@ sleep 30s;
 
 docker-compose exec -T server corteza-server settings set auth.mail.from-address ${SMTP_FROM}
 docker-compose down;
-docker-compose up;
+docker-compose up -d;
 
+echo "Registering..."
 sleep 30s;
 docker-compose exec -T server corteza-server users add ${ADMIN_EMAIL} --password ${ADMIN_PASSWORD}
