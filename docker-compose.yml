@@ -4,16 +4,19 @@ services:
   server:
     image: cortezaproject/corteza:${SOFTWARE_VERSION_TAG}
     restart: always
-    env_file: [./.env]
-    depends_on: [db]
-    ports: ["172.17.0.1:18080:80"]
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    ports:
+      - "172.17.0.1:18080:80"
 
   db:
     image: elestio/postgres:15
     restart: always
     healthcheck:
       {
-        test: ["CMD-SHELL", "pg_isready -U corteza"],
+        test: ["CMD-SHELL", "pg_isready -U postgres"],
         interval: 10s,
         timeout: 5s,
         retries: 5,
@@ -23,8 +26,9 @@ services:
     volumes:
       - "./dbdata:/var/lib/postgresql/data"
     environment:
+      POSTGRES_DB: corteza
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: DB_PASSWORD
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
 
   pgadmin4:
     image: dpage/pgadmin4:latest

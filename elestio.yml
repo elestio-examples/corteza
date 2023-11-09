@@ -43,8 +43,12 @@ environments:
     value: "smtp"
   - key: "SMTP_HOST"
     value: "172.17.0.1:25"
+  - key: "SMTP_TLS_INSECURE"
+    value: "true"
   - key: "SMTP_FROM"
-    value: "'Demo' <[DOMAIN@vm.elestio.app]>"
+    value: "[DOMAIN]@vm.elestio.app"
+  - key: "AUTH_BASE_URL"
+    value: "'https://[CI_CD_DOMAIN]/auth'"
 
 config:
   runTime: "dockerCompose"
