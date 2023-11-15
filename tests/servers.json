@@ -3,7 +3,7 @@
         "1": {
             "Name": "local",
             "Group": "Servers",
-            "Host": "localhost",
+            "Host": "172.17.0.1",
             "Port": 4921,
             "MaintenanceDB": "postgres",
             "SSLMode": "prefer",
